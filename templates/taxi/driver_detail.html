@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block content %}
+  <h1>Driver: {{ driver.first_name }}</h1>
+  <h2>Cars:</h2>
+  <ul>
+  {% for car in driver.cars.all %}
+    <li>{{ car.manufacturer }} {{ car.model }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
